@@ -1,0 +1,6 @@
+[submodule "ew-helper-demo"]
+	path = ew-helper-demo
+	url = https://github.com/energywebfoundation/ew-helper-demo
+[submodule "ew-origin-frontend"]
+	path = ew-origin-frontend
+	url = https://github.com/energywebfoundation/ew-origin-frontend
