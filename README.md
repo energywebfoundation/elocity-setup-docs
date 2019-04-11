@@ -1,6 +1,6 @@
 # Setup and Getting Started Guide
 
-The applications consists of two main components:
+The applications consists of two main components, which contain setup instructins of their own:
 
 - The *ew-link* repository contains the code to communicate with the charging station
   - written in Python 3.7
@@ -13,7 +13,7 @@ The applications consists of two main components:
   - written in Javascript (Node backend, React.js frontend)
   - one instance per organisation
   - runs a blockchain client
-  - consists of multiple components which should be deployed using docker-compose
+  - consists of multiple components which should be deployed using the included docker-compose
     - [kong](https://konghq.com/kong/) routes the API communication inside Docker
     - elasticsearch is used to store off-chain and diagnostic data
     - ew-helper-demo is the backend to ew-origin-frontend and communicates with the blockchain client
