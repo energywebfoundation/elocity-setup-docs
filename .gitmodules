@@ -4,3 +4,6 @@
 [submodule "ew-origin-frontend"]
 	path = ew-origin-frontend
 	url = https://github.com/energywebfoundation/ew-origin-frontend
+[submodule "ew-link-elocity"]
+	path = ew-link-elocity
+	url = https://github.com/energywebfoundation/ew-link-elocity
