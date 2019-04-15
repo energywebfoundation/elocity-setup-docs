@@ -17,6 +17,16 @@ git submodule update
 
 ## Getting Started
 
+### Hardware
+
+- EV charging station: Ebee Smart Technologies with Bender controller
+- Raspberry Pi
+    - Flash the microSD card of the Pi with the provided image
+    - Connect the Wifi hotspot of the Pi und push the Bender configuration
+    - See the [Bender manual](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwiGvuucldLhAhXP2qQKHV1cA8QQFjAAegQIABAC&url=https%3A%2F%2Fwww.bender.de%2Ffileadmin%2Fcontent%2FProducts%2Fm%2Fe%2FCC612(4G)_D00325_M_XXEN.pdf&usg=AOvVaw2HcItzAOrCPN_NrjpFUvFo) for more details
+    - Connect the Raspbery Pi to the Bender device by USB
+- Linux Server capable of running Docker
+
 ### First run
 
 Start the application using `sudo docker-compose up` from inside *ew-origin-frontend*. Let docker-compose settle, then restart it to pickup the db initalisation which occures on first run. Compose binds to port 80, therefore you need to run it with elevated priviliges.
@@ -92,3 +102,9 @@ The applications consists of two main components, which contain setup instructin
     - elasticsearch is used to store off-chain and diagnostic data
     - ew-helper-demo is the backend to ew-origin-frontend and communicates with the blockchain client
     - ew-origin-frontend itself contains the React single page application to provision new devices and onboard new users, the docker-compose for the whole stack can be found here as well
+
+## Operation
+
+The charging device goes through different lifecycle states. Since they are published asynchronously from the OCPP server not all of them may be visible to the frontend. Further the frontend provides a high level interface and therefore treats similar states as one. The following diagram visualized the mapping of actual device states and their frontend representation.
+
+![Charge Point State Diagram](https://github.com/energywebfoundation/elocity-setup-docs/raw/master/img/ChargePointStateDiagram.png)
